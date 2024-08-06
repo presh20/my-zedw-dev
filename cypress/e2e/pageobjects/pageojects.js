@@ -67,6 +67,10 @@ export const LOGIN = {
      dobMonth:'.v-date-picker-header__value > .primary--text',
      dobYear: '.fade-transition-enter-active > .v-date-picker-header > .v-date-picker-header__value > .primary--text',
      dobselectYear: '.v-date-picker-years',
+     stateDropdwon:'div.v-list-item__content',
+     dobDate : 'tbody > :nth-child(1) > :nth-child(2) > .v-btn > .v-btn__content',
+     dobSelectDate: ':nth-child(2) > :nth-child(4) > .v-btn > .v-btn__content',
+     
 
 
   }

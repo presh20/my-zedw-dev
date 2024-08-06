@@ -30,16 +30,16 @@
         cy.get(SIGNATORY.dobselectYear).scrollTo('bottom').contains('1995').click()
         cy.contains('OK').click({force:true})
         cy.contains('Date of Birth').click({force:true})
-        cy.get('tbody > :nth-child(1) > :nth-child(2) > .v-btn > .v-btn__content').click()
-        cy.get(':nth-child(2) > :nth-child(4) > .v-btn > .v-btn__content').click()
+        cy.get(SIGNATORY.dobDate).click()
+        cy.get(SIGNATORY.dobSelectDate).click()
         cy.contains('OK').click({force:true})
         cy.contains('Email').click({force:true}).type(fakeEmail)
         cy.contains('Residential address').click({force:true}).type('Rita close')
         cy.contains('Region/State').click({force:true})
-        cy.get('div.v-list-item__content').contains('Abia').click()
+        cy.get(SIGNATORY.stateDropdwon).contains('Abia').click()
         cy.contains('Town/City').click({force:true}).type('Umuahia')
         cy.get(':nth-child(7) > :nth-child(2) > .row > .col > .mb-6 > .document-uploader-wrap > :nth-child(1) > .main-uploader').click({force:true})
-        
+       // cy.get(':nth-child(7) > :nth-child(2) > .row > .col > .mb-6 > .document-uploader-wrap > :nth-child(1) > .main-uploader')
         /**cy.get('input[type="file"]').each(($el) => {
          cy.wrap($el).click({force:true})
          .selectFile("C:\\Users\\precious.ibeagwa\\Pictures\\Approval.png");
