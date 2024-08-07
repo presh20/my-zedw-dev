@@ -25,7 +25,6 @@
        cy.get(LOGIN.Password_field).type(LOGIN.Invalid_email)
        cy.get(LOGIN.Login_bttn).click();
        cy.get(LOGIN.Login_bttn).click();
-       //cy.wait(10000);
        cy.url().should('eq','https://dev.business.zedcrestwealth.com/login')
        })
        it ('verify user cannot login with an invalid login credentials', ()=>{
@@ -34,7 +33,6 @@
         cy.get(LOGIN.Login_bttn).click();
         cy.get(LOGIN.Login_bttn).click();
         cy.get (LOGIN.Invalid_Credentials).click(),
-        //cy.get(alertMessage).should('have.text', 'Invalid Credentials');
 
         cy.wrap(null).then(() =>
         {expect(alertMessage).to.equal('Invalid Credentials');

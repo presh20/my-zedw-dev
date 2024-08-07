@@ -78,3 +78,9 @@ export const LOGIN = {
   export const WITHDRAW={
     withdrawBtn :'#withdraw',
   }
+
+  export const PORTFOLIO ={
+    portfolioPage: '[aria-selected="false"]',
+    portfolioValidation :'#app > div > div:nth-child(1) > main > div > div.dashboard-wrap.mx-auto > div.row > div:nth-child(1) > div > div > div.d-flex.align-center.justify-center > div > span',
+    
+  }

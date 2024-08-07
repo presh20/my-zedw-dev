@@ -39,9 +39,8 @@
         cy.get(SIGNATORY.stateDropdwon).contains('Abia').click()
         cy.contains('Town/City').click({force:true}).type('Umuahia')
         cy.get(':nth-child(7) > :nth-child(2) > .row > .col > .mb-6 > .document-uploader-wrap > :nth-child(1) > .main-uploader').click({force:true})
-       // cy.get(':nth-child(7) > :nth-child(2) > .row > .col > .mb-6 > .document-uploader-wrap > :nth-child(1) > .main-uploader')
-        /**cy.get('input[type="file"]').each(($el) => {
-         cy.wrap($el).click({force:true})
+      
+         /**cy.wrap($el).click({force:true})
          .selectFile("C:\\Users\\precious.ibeagwa\\Pictures\\Approval.png");
        });**/
       // cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div.add-signatory.mb-10.max-w-400 > div > form > div > div:nth-child(10) > div:nth-child(2) > div > div > div > div > div > div').click({force:true})

@@ -1,5 +1,5 @@
  /// <references types="cypress" />
- import { LOGIN, WITHDRAW } from "./pageobjects/pageojects"
+ import { LOGIN, PORTFOLIO, WITHDRAW } from "./pageobjects/pageojects"
 
  describe ('Validate portfolio visibility', ()=>{
  beforeEach (()=>{
@@ -10,9 +10,8 @@
       cy.get(LOGIN.Login_bttn).click()
    })
   it ('Validate portfolio page',()=>{
-    cy.get('[aria-selected="false"]').click()
-    cy.get('.flex-grow-1 > :nth-child(3)').should('have.text','Portfolio balance')
-    //cy.get('#app > div.v-application--wrap > div:nth-child(1) > main > div > div.dashboard-wrap.mx-auto > div.row > div:nth-child(1) > div > div > div.d-flex.align-center.justify-center > div > span').should('have.text','Portfolio balance')
-
+    cy.get(PORTFOLIO.portfolioPage).click()
+    cy.get(PORTFOLIO.portfolioValidation).should('include.text','Portfolio');
+    
   })
 })
