@@ -1,19 +1,19 @@
 trigger:
-- main  # Or your default branch name
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: UseNode@2
+- task: NodeTool@0
   inputs:
-    versionSpec: '20.11.0'  # Use the Node.js version you need
+    versionSpec: '20.11.0'
   displayName: 'Install Node.js'
 
 - script: |
     npm install
-    npm install cypress
-  displayName: 'Install dependencies'
+    npm run build
+  displayName: 'npm install and build'
 
 - script: |
     npx cypress run
