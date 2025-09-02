@@ -13,7 +13,11 @@
     "@faker-js/faker": "^8.4.1"
   },
   "devDependencies": {
+    "axios": "^1.7.5",
     "cypress": "^13.13.1",
-    "faker": "^5.5.3"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mailosaur": "^2.15.0",
+    "faker": "^5.5.3",
+    "mailosaur": "^8.6.1"
   }
 }
