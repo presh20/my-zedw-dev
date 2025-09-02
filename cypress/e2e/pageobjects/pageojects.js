@@ -13,11 +13,32 @@ export const LOGIN = {
 }
 
  export const SIGNUP = {
-     firstNam : '#input-43',
-     lastNam: '#input-45',
-     businessNam : '#input-47',
-     emailAdd : '#input-49', 
-     craeatPass :'#input-51',
+     firstNam : () =>
+      cy.contains('label', 'Enter first name')
+        .invoke('attr', 'for')
+        .then((id) => cy.get(`#${id}`)),
+     //'#input-43', 
+     lastNam: () =>
+      cy.contains('label', 'Enter last name')
+        .invoke('attr', 'for')
+        .then((id) => cy.get(`#${id}`)),
+     //'#input-45',
+     businessNam : () =>
+      cy.contains('label', 'Enter Business name')
+        .invoke('attr', 'for')
+        .then((id) => cy.get(`#${id}`)),
+     //'#input-47',
+     emailAdd : () =>
+      cy.contains('label', 'Email Address')
+        .invoke('attr', 'for')
+        .then((id) => cy.get(`#${id}`)),
+     //'#input-49', 
+     craeatPass :() =>
+      cy.contains('label', 'Create Password')
+        .invoke('attr', 'for')
+        .then((id) => cy.get(`#${id}`)),
+
+     //'#input-51',
      NameofBus : 'Test Ventures',
      privacy_checkbox : '.checkbox-control > .cursor-pointer',
      signUp_bttn:'#on-board-btn',
@@ -35,7 +56,9 @@ export const LOGIN = {
    
   }
   export const TREASURY = {
-   TreaSury_Page :'[href="/treasury"]',
+    
+   TreaSury_Page :'[href="/investment"]',
+   ClickTreaSury: '[href="/treasury"]',
    Validate_TreasTittle:'.options--page-title',
    NairaTreas:'#app > div > div:nth-child(1) > main > div > div:nth-child(2) > div > div:nth-child(1) > div.background--image > div > div.v-responsive__content',
    investButton : '#invest',
@@ -79,8 +102,8 @@ export const LOGIN = {
     withdrawBtn :'#withdraw',
   }
 
-  export const PORTFOLIO ={
-    portfolioPage: '[aria-selected="false"]',
-    portfolioValidation :'#app > div > div:nth-child(1) > main > div > div.dashboard-wrap.mx-auto > div.row > div:nth-child(1) > div > div > div.d-flex.align-center.justify-center > div > span',
-    
+  export const Onboard ={
+
+    firstName : '#input-43',
   }
+  

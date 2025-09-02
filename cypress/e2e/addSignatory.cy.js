@@ -8,7 +8,7 @@
        cy.get(LOGIN.Email_field).type (LOGIN.Email_address)
        cy.get(LOGIN.Password_field).type (LOGIN.Passwrd)
        cy.get(LOGIN.Login_bttn).click()
-       cy.get(LOGIN.Login_bttn).click()
+       //cy.get(LOGIN.Login_bttn).click()
     })
     it  ('Ability to add signatories',()=>{
         const randomfirstName = faker.name.firstName();
@@ -38,12 +38,16 @@
         cy.contains('Region/State').click({force:true})
         cy.get(SIGNATORY.stateDropdwon).contains('Abia').click()
         cy.contains('Town/City').click({force:true}).type('Umuahia')
-        cy.get(':nth-child(7) > :nth-child(2) > .row > .col > .mb-6 > .document-uploader-wrap > :nth-child(1) > .main-uploader').click({force:true})
-      
-         /**cy.wrap($el).click({force:true})
-         .selectFile("C:\\Users\\precious.ibeagwa\\Pictures\\Approval.png");
-       });**/
-      // cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div.add-signatory.mb-10.max-w-400 > div > form > div > div:nth-child(10) > div:nth-child(2) > div > div > div > div > div > div').click({force:true})
+        cy.get ("input[type=file]").attachFile("Approval.png")
+        cy.contains('Phone number').click({force:true}).type('08102313456')
+        cy.contains('ID document').click({force:true})
+        cy.contains('Driver License').scrollIntoView().click();
+        cy.contains('ID number').click({force:true}).type('ABC45517728')
+        cy.get ("input[type=file]").attachFile("Bank account approval .png") //C:\Users\precious.ibeagwa\Desktop\Cypress install\cypress\fixtures\Bank account approval .png
+        cy.get('#save').click()
+        cy.get('#save').click()
+        cy.get('.sa-success').should('include.text','added successfully.')
+        
         
       })
      
